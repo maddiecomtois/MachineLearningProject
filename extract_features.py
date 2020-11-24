@@ -4,12 +4,34 @@
 Text Treatment for Data
 """
 
-from nltk.tokenize import sent_tokenize, word_tokenize
-example_text = "Hallo Guten Tag Grüß dich Wie geht’s? Guten Morgen. Guten Tag. Guten Abend. Willkommen in Deutschland. Hallo, wie geht’s dir? Hallo, Caroline. Hallo, Christopher, wie geht’s dir? Danke gut, und dir? Danke, auch gut. (Setz’ dich doch.) Hallo, wie geht’s dir? Danke gut, und dir? Danke, mir auch. Hallo, Ina. Hallo, Angela, wie geht’s dir? Danke gut, und dir? Danke, mir auch. (Sollen wir einen Kaffee trinken gehen?) Tschüs!"
-#print(sent_tokenize(example_text))
-#print(word_tokenize(example_text))
+import os
+import nltk
 
-from nltk.corpus import stopwords #note: du/Sie/ihnen are stop words!
-stop_words = set(stopwords.words("german"))
-for i in stop_words:
-    print(i)
+directory = '/Users/maddie/Documents/TCDModules/Machine_Learning/Project/MachineLearningProject/Datasets'
+familiar_tags = ['du', 'Du', 'dich', 'ihr', 'dir']
+formal_tags = ['Sie', 'Ihnen']
+
+# loop through all the convo files in the Datasets directory
+for filename in sorted(os.listdir(directory)):
+    familiar_count = 0.0
+    formal_count = 0.0
+    file_object = open(directory + '/' + filename, "r")
+    # segment the contents into individual words
+    contents = nltk.word_tokenize(file_object.read())
+
+    # count the number of familiar/formal words
+    for word in contents:
+        if word in familiar_tags:
+            familiar_count += 1
+        if word in formal_tags:
+            formal_count += 1
+
+    # get frequency of formal/familiar out of total number of total counts
+    total_count = formal_count + familiar_count
+    print(filename)
+    print('\tNumber of familiar: ', familiar_count)
+    print('\tNumber of formal: ', formal_count)
+    if total_count > 0:
+        print("\tFamiliar frequency: ", familiar_count, " / ", total_count, " = ", familiar_count / total_count)
+        print("\tFormal frequency: ", formal_count, " / ", total_count, " = ", formal_count / total_count)
+

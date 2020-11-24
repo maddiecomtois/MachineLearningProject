@@ -1,0 +1,9 @@
+Kellner: Bitte schön?
+Kunde 1: Ich möchte einen Milchkaffee bitte.
+Kunde 2: Ich möchte bitte einen Tee.
+Kellner: Möchten Sie etwas essen?
+Kunde 1: Ja gern, ein Stück Käsekuchen bitte.
+Kunde 2: Für mich bitte einen Johannisbeerkuchen mit Sahne.
+Kellner: So, einen Käsekuchen, einen Milchkaffee, einen Johannisbeerkuchen, Sahne und einen Tee. Guten Appetit.
+Kunde: Danke.
+Ausgezeichnet.

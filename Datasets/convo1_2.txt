@@ -1,0 +1,11 @@
+Frau Mertel: Hallo!
+Frau Schmidt: Guten Tag, Frau Mertel.
+Frau Mertel: Guten Tag, Frau Schmidt.
+Frau Schmidt: Wie geht es Ihnen?
+Frau Mertel: Danke, mir geht es gut, wie geht es Ihnen?
+Frau Schmidt: Gut, danke. Frau Mertel, darf ich vorstellen, das ist Herr Müller.
+Herr Müller: Freut mich, Frau Mertel.
+Frau Mertel: Freut mich auch.
+Darf ich vorstellen, das ist Herr Müller.
+Freut mich Frau Mertel.
+Auf Wiedersehen!

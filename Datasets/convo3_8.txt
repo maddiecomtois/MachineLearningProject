@@ -1,0 +1,24 @@
+Ich möchte bitte ein Stück Schafskäse.
+Wie viel möchten Sie?
+Dreihundert Gramm bitte.
+Sonst noch etwas?
+Verkäufer: Guten Tag, kann ich Ihnen helfen?
+Kunde: Ja, ich möchte bitte ein Stück Schafskäse.
+Verkäufer: Wie viel möchten Sie?
+Kunde: Dreihundert Gramm bitte
+Verkäufer: Das sind dreihundertzwanzig Gramm.
+Kunde: Das ist in Ordnung.
+Verkäufer: Sonst noch etwas?
+Kunde: Nein danke.
+Verkäufer: Das sind neunzehn neunzig.
+Kunde: Danke.
+Verkäufer: Tschüs.
+Was kostet die Schneekugel?
+Tourist: Guten Tag.
+Verkäuferin: Guten Tag!
+Tourist: Was kostet die Schneekugel, bitte?
+Verkäuferin: Dreizehn achtzehn.
+Tourist: Dann möchte ich gern den Mousepad und die Schneekugel. Was macht das zusammen?
+Verkäuferin: Achtzehn Euro vierzig, bitte. Danke, und eins sechzig Wechselgeld.
+Tourist: Danke schön.
+Verkäuferin: Auf Wiedersehen.

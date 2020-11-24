@@ -1,0 +1,18 @@
+Kellnerin: Möchten Sie noch etwas trinken?
+Mädchen 1: Ja gerne, eine Tasse Kaffee, bitte.
+Kellnerin: Und für Sie?
+Mädchen 2: Für mich nichts, danke.
+Kellnerin: Möchten Sie etwas essen?
+Mann: Ja, noch ein Bier und einen gemischten Salat, bitte.
+Kellner: Sonst noch etwas?
+Mädchen 1: Nein danke.
+Kellnerin: Danke schön.
+Wir möchten bitte zahlen.
+Zusammen oder getrennt?
+Zusammen, bitte.
+Mann: Wir möchten bitte zahlen.
+Kellnerin: Geht das zusammen oder getrennt?
+Mann: Zusammen, bitte.
+Kellnerin: Das macht achtzehn fünfzig, bitte.
+Mann: Zwanzig, danke.
+Kellnerin: Danke schön. Auf Wiedersehen.

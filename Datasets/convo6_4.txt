@@ -1,0 +1,9 @@
+Kunde 1: Wie gefällt dir die Brille?
+Kunde 2: Die ist doch toll, aber probier sie doch mal in einer anderen Farbe.
+Verkäuferin: Hallo, kann ich helfen?
+Kunde 1: Hast du die Brille auch noch in einer anderen Farbe da?
+Verkäuferin: Ja, die haben wir in rot und silbern.
+Kunde 1: Die rote ist schön, die probiere ich gleich mal… und?
+Kunde 2: Klasse, super.
+Kunde 1: Gefällt mir auch gut. Die nehme ich.
+Verkäuferin: Zum Zahlen bitte da rüber gehen.

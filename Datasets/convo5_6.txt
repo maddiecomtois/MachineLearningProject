@@ -1,0 +1,11 @@
+Gast 1: Was ist das Tagesgericht?
+Kellner: Schweinebraten mit Gemüse und Kartoffeln oder gebratene Ente mit Rotkohl.
+Kunde 2: Haben Sie auch vegetarische Gerichte?
+Kellner: Ja, hier.
+Kunde 1: Ich möchte bitte den  Schweinebraten
+Kunde 2: Für mich bitte einen großen gemischten Salat.
+Kellner: Danke schön.
+Kellner: So, der große gemischte Salat und der Schweinebraten. Guten Appetit!
+Gast: Danke schön.
+Hat es geschmeckt?
+Ja, danke sehr gut.

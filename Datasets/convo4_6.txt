@@ -1,0 +1,5 @@
+Gast: Grüß Gott. Ich habe hier ein Zimmer reserviert.
+Nonne: Grüß Gott. Wie ist denn Ihr Name, bitte?
+Gast: Mein Name ist Henning Holz.
+Nonne: Ich sage Schwester Klara Bescheid.
+Gast: Danke schön.

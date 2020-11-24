@@ -1,0 +1,9 @@
+Kunde: Einmal nach Hamburg hin und zurück, bitte.
+Beamtin: Zweite Klasse oder erste Klasse?
+Kunde: Zweite Klasse, bitte.
+Beamtin: Zweihundertsiebzig und fünfzig.
+Kunde: Muss ich einen Platz reservieren?
+Beamtin: Das ist besser. Raucher oder Nichtraucher?
+Kunde: Nichtraucher.
+Beamtin: Das macht dann 275,50 bitte. Auf Wiedersehen. Gute Reise.
+Kunde: Danke schön.

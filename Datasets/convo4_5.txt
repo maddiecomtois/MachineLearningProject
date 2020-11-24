@@ -1,0 +1,8 @@
+Gast: Grüß Gott! Haben Sie noch ein Doppelzimmer frei für heute Nacht?
+Lorenz: Ja freilich habe ich noch ein Doppelzimmer.
+Gast: Haben Sie ein Zimmer mit Bergblick?
+Lorenz: Ja mit Blick über Oberammergau.
+Gast: Können wir noch etwas essen?
+Lorenz: Jederzeit können Sie noch etwas essen.
+Gast: Danke schön.
+Lorenz: Soll ich Ihnen das Zimmer zeigen?

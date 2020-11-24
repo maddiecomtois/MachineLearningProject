@@ -1,0 +1,6 @@
+Gast: Guten Tag, ich möchte gerne ein Doppelzimmer reservieren.
+Hotel: Für wann?
+Gast: Für heute Nacht, für drei Tage.
+Hotel: Moment bitte... Es tut mir Leid, das Hotel ist zur Zeit ausgebucht.
+Gast: Oh, schade! Vielen Dank.
+

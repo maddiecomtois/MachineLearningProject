@@ -1,0 +1,8 @@
+Kunde: Entschuldigen Sie bitte, wann fährt der nächste Zug nach Hamburg?
+Beamter: Um 13.01 von Gleis 13.
+Kunde: Muss ich umsteigen?
+Beamter: Nein, der ist direkt.
+Kunde: Und wo bekomme ich Fahrkarten?
+Beamter: Da im Reisezentrum oder am Automaten.
+Kunde: Danke schön.
+Beamter: Bitte schön.

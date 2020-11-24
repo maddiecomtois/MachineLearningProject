@@ -1,0 +1,7 @@
+Kellner: Guten Abend, was möchten Sie gerne?
+Kunde 1: Ich möchte bitte eine Pina Colada.
+Kunde 2: Haben Sie auch alkoholfreie Cocktails?
+Kellner: Möchten Sie lieber süß, sauer oder cremig?
+Kunde 2: Ich glaube, ich nehm’ einen süßen Cocktail.
+Kellner: Dann empfehle ich Ihnen einen Boris Good Night Cup. Ist das okay?
+Kunde 2: Ja, ich nehm’ einen Boris Good Night Cup.

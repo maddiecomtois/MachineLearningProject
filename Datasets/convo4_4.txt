@@ -1,0 +1,11 @@
+Gast: Guten Tag
+Rezeptionistin: Grüß Gott.
+Gast: Haben Sie ein Zimmer frei für heute Nacht?
+Rezeptionistin: Was für ein Zimmer möchten Sie?
+Gast: Ein Doppelzimmer mit Bad, bitte.
+Rezeptionistin: Und für wie lange?
+Gast: Für 3 Nächte.
+Rezeptionistin: Kein Problem. So, hier ist der Schlüssel.
+Zimmernummer 374 in der ersten Etage.
+Frühstück gibt’s  von 7 bis 11 Uhr.
+

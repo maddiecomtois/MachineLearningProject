@@ -1,0 +1,8 @@
+Kunde: Guten Tag.
+Verkäuferin: Grüß Gott.
+Kunde: Was kostet eine Flasche Likör?
+Verkäuferin: Die kleine 6,30, die mittlere 17,90 und die große 22,90.
+Kunde: Gut, ich nehme drei große Flaschen von diesem Likör bitte.
+Verkäuferin: Das macht dann 68,70 bitte.
+Kunde: Bitte.
+Verkäuferin: Wiedersehen.

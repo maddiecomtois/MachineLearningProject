@@ -1,0 +1,8 @@
+Passagier: Entschuldigen Sie bitte, wann fährt der letzte Zug nach München?
+Schaffner: Um 22.03, Gleis 3.
+Passagier: Müssen wir umsteigen?
+Schaffner: Nein, der Zug geht direkt.
+Passagier: Und wann kommt der Zug in München an?
+Schaffner: Um 23.53 Uhr.
+Passagier: Vielen Dank, Wiedersehen.
+Schaffner: Wiedersehen.

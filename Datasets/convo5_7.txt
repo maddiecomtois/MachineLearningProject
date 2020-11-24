@@ -1,0 +1,7 @@
+Kellner: Hat es geschmeckt?
+Gast 1: Danke, es war sehr gut.
+Kellner: Möchten Sie noch etwas essen?
+Kunde 2: Was für Nachspeisen haben Sie?
+Kellner: Frische Erdbeeren mit Sahne, Apfelstrudel oder Obstsalat.
+Kunde 1: Ich hätte gerne die frischen Erdbeeren.
+Kunde 2: Und für mich bitte einen Apfelstrudel.

@@ -9,3 +9,4 @@ Kellner: So, der große gemischte Salat und der Schweinebraten. Guten Appetit!
 Gast: Danke schön.
 Hat es geschmeckt?
 Ja, danke sehr gut.
+ordering at restaurant

@@ -6,3 +6,4 @@ Kunde: Und wo bekomme ich Fahrkarten?
 Beamter: Da im Reisezentrum oder am Automaten.
 Kunde: Danke schön.
 Beamter: Bitte schön.
+conversation with officer

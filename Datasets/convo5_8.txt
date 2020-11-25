@@ -4,3 +4,4 @@ Kunde 2: Können wir uns eine Portion teilen?
 Kellner: Ja freilich.
 Kellner: Hat es geschmeckt?
 Kunde 2: Ja, sehr gut, danke.
+ordering at restaurant

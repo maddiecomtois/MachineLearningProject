@@ -3,3 +3,4 @@ Was für ein Zimmer möchten Sie?
 Ein Doppelzimmer mit Bad.
 Und für wie lange?
 Für 3 Nächte.
+hotel reservation

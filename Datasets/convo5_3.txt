@@ -7,3 +7,4 @@ Beamtin: Das ist besser. Raucher oder Nichtraucher?
 Kunde: Nichtraucher.
 Beamtin: Das macht dann 275,50 bitte. Auf Wiedersehen. Gute Reise.
 Kunde: Danke schön.
+conversation with officer

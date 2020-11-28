@@ -7,3 +7,4 @@ Ich wohne in München, nicht weit von der Uni.
 Ich wohne in der Nähe vom Englischen Garten.
 Ich wohne nicht weit vom Deutschen Museum.
 Ich wohne in München, in der Borstei.
+with students

@@ -5,3 +5,4 @@ Ich bin Konditormeister.
 Ich bin Fischer.
 Ich bin Pensionär.
 Ich bin Elektriker, ich arbeite bei BMW.
+with stranger

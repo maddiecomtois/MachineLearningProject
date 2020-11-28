@@ -7,3 +7,4 @@ Kunde 2: Für mich bitte einen Johannisbeerkuchen mit Sahne.
 Kellner: So, einen Käsekuchen, einen Milchkaffee, einen Johannisbeerkuchen, Sahne und einen Tee. Guten Appetit.
 Kunde: Danke.
 Ausgezeichnet.
+ordering at restaurant

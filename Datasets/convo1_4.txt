@@ -4,3 +4,4 @@ Herr Baumann: Mir geht es gut, danke.
 Frau Moog: Darf ich vorstellen, das ist meine Freundin Heide Zimmermann.
 Herr Baumann: Freut mich, Frau Zimmermann, mein Name ist Elmar Baumann.
 Frau Zimmermann: Freut mich auch.
+introductions

@@ -16,3 +16,4 @@ Mann: Zusammen, bitte.
 Kellnerin: Das macht achtzehn fünfzig, bitte.
 Mann: Zwanzig, danke.
 Kellnerin: Danke schön. Auf Wiedersehen.
+ordering at restaurant

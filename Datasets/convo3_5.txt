@@ -1,3 +1,4 @@
 Mein Name ist Peter Pickert. Ich wohne in Mührlau. Ich arbeite bei BMW und bin Schweißer. Ich arbeite bei BMW.
 Ich heiße Monika Halser. Ich wohne in München. Ich bin Sekretärin.
 Hallo, Ich heiße Bianca Gabler. Ich wohne in München, ich arbeite bei BMW und bin Verkäuferin.
+with stranger

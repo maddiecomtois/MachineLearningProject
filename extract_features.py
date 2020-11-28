@@ -8,12 +8,12 @@ import os
 import nltk
 import numpy as np
 
-# directory = '/Users/maddie/Documents/TCDModules/Machine_Learning/Project/MachineLearningProject/Datasets'
 directory = './Datasets'
 familiar_tags = ['du', 'Du', 'dich', 'ihr', 'dir']
 formal_tags = ['Sie', 'Ihnen', 'Herr', 'Frau']
 convo_type_tags = ["customer service", "interview", "with friends", "hotel reservation", "hotel check in",
-                   "conversation with officer", "ordering at restaurant", "short conversation", "test cat"]
+                   "conversation with officer", "ordering at restaurant", "short conversation", "with colleagues",
+                   "travel", "introductions", "with stranger", "with family", "with students", "with elderly"]
 convo_dataset = []
 
 # loop through all the convo files in the Datasets directory
@@ -22,7 +22,7 @@ for filename in sorted(os.listdir(directory)):
     formal_count = 0.0
     entry_label = 0
     dataset_entry = []
-    # file_object = open(directory + '/' + filename, "r")
+
     with open(directory + '/' + filename, 'r') as f:
         # segment the contents into individual words
         contents = nltk.word_tokenize(f.read())
@@ -62,3 +62,4 @@ for filename in sorted(os.listdir(directory)):
 
 convo_dataset = np.array(convo_dataset)
 print("\nFeature Matrix\n", convo_dataset)
+print("Number of data entries: ", convo_dataset.size)

@@ -6,6 +6,7 @@ Kellner: Und Sie, bitte?
 Mann: Für mich ein Bier, bitte.
 Kellnerin: Danke schön.
 Möchten Sie noch etwas trinken?
-Ja gerne, noch eine Tasse Kaffee.  Noch ein Bier und einen gemischten Salat, bitte.
+Ja gerne, noch eine Tasse Kaffee. Noch ein Bier und einen gemischten Salat, bitte.
 Und für Sie?
 Für mich nichts, danke.
+ordering at restaurant

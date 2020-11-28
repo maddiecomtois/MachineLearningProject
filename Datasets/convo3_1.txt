@@ -10,3 +10,4 @@ Ich wohne in der Nähe von Hannover.
 Ich wohne in Utting am Ammersee.
 Ich wohne in Aachen.
 Ich wohne in München.
+with stranger

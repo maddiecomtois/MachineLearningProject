@@ -11,8 +11,8 @@ import numpy as np
 directory = './Datasets'
 familiar_tags = ['du', 'Du', 'dich', 'ihr', 'dir']
 formal_tags = ['Sie', 'Ihnen', 'Herr', 'Frau']
-convo_type_tags = ["customer service", "interview", "with friends", "hotel reservation", "hotel check in",
-                   "conversation with officer", "ordering at restaurant", "short conversation", "with colleagues",
+convo_type_tags = ["customer service", "interview", "meeting", "with friends", "hotel reservation", "hotel check in",
+                   "conversation with officer", "ordering at restaurant", "with colleagues", "convo with spouse",
                    "travel", "introductions", "with stranger", "with family", "with students", "with elderly"]
 convo_dataset = []
 
@@ -62,4 +62,4 @@ for filename in sorted(os.listdir(directory)):
 
 convo_dataset = np.array(convo_dataset)
 print("\nFeature Matrix\n", convo_dataset)
-print("Number of data entries: ", convo_dataset.size)
+print("Number of data entries: ", len(convo_dataset))

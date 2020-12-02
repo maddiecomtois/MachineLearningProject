@@ -18,6 +18,8 @@ convo_type_tags = ["customer service", "interview", "meeting", "with friends", "
 
 def get_feature_matrix():
     convo_dataset = []
+    total_familiar = 0
+    total_formal = 0
     print("Collecting Data from Dataset...")
     # loop through all the convo files in the Datasets directory
     for filename in sorted(os.listdir(directory)):
@@ -47,7 +49,14 @@ def get_feature_matrix():
                 print("\tFormal frequency: ", formal_count, " / ", total_count, " = ", formal_count / total_count)
 
             # initialise label of the entry & append to feature list/vector
-            entry_label = -1 if familiar_count > formal_count else 1
+            #entry_label = -1 if familiar_count > formal_count else 1
+            if familiar_count > formal_count:
+                total_familiar += 1
+                entry_label = -1
+            else:
+                total_formal += 1
+                entry_label = 1
+
             dataset_entry.append(formal_count)
             dataset_entry.append(familiar_count)
 
@@ -66,6 +75,8 @@ def get_feature_matrix():
     convo_dataset = np.array(convo_dataset)
     # print("\nFeature Matrix\n", convo_dataset)
     print("Number of data entries: ", len(convo_dataset))
+    print("Total number of formal: ", total_formal)
+    print("Total number of familiar: ", total_familiar)
     return convo_dataset
 
 get_feature_matrix()

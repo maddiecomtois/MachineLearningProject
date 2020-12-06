@@ -1,0 +1,22 @@
+Mutter:
+Ist das dein Glas?
+Vater:
+Auf Dein bestandenes Abitur, mein Junge!
+Mutter:
+Ja, Peter, noch mal herzlichen Glückwunsch. Wir sind richtig stolz auf dich.
+Peter:
+Prost, Mama. Prost, Papa. Ich bin echt froh, dass die ganze Paukerei vorbei ist. Und irgendwie
+freu' ich mich auch auf die Lehre, endlich 'was Praktisches machen, mit den Händen arbeiten.
+Vater:
+Na ja. Aber du weißt ja, die Lernerei ist noch nicht zu Ende. Da ist ja auch noch die
+Berufsschule!
+Peter:
+Klar, aber da lerne ich doch für die Praxis, und nicht irgendeinen Theorie-Kram, den ich nie
+wieder brauche!
+Mutter:
+Industriemechaniker, das ist schon das Richtige für dich, glaub' ich. Und so 'ne Lehre ist 'was
+Solides, da kannst du später drauf aufbauen! Du könntest ja dann immer noch studieren,
+Ingenieur oder so.
+Peter:
+Komm, Mama. Jetzt mach' ich erst mal die Lehre. Und in drei Jahren sehen wir dann weiter!
+with family

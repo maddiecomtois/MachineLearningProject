@@ -68,7 +68,16 @@ def get_feature_matrix():
             else:
                 print("\tType: ", type_tag)
 
-            dataset_entry.append(type_tag)
+            # use bag of words to create vectors for the conversation type feature
+            bag_vector = np.zeros(len(convo_type_tags))
+            i = 0
+            for word in convo_type_tags:
+                if type_tag == word:
+                    bag_vector[i] += 1
+                i += 1
+            print("{0}\n{1}\n".format(type, np.array(bag_vector)))
+
+            dataset_entry.append(np.array(bag_vector))
             dataset_entry.append(entry_label)
             convo_dataset.append(dataset_entry)
 
@@ -77,6 +86,7 @@ def get_feature_matrix():
     print("Number of data entries: ", len(convo_dataset))
     print("Total number of formal: ", total_formal)
     print("Total number of familiar: ", total_familiar)
+    print(convo_dataset)
     return convo_dataset
 
 

@@ -73,11 +73,12 @@ def get_feature_matrix():
             i = 0
             for word in convo_type_tags:
                 if type_tag == word:
-                    bag_vector[i] += 1
-                i += 1
-            print("{0}\n{1}\n".format(type, np.array(bag_vector)))
+                    dataset_entry.append(1)
+                else:
+                    dataset_entry.append(0)
+            # print("{0}\n{1}\n".format(type, np.array(bag_vector)))
 
-            dataset_entry.append(np.array(bag_vector))
+            # dataset_entry.append(np.array(bag_vector))
             dataset_entry.append(entry_label)
             convo_dataset.append(dataset_entry)
 

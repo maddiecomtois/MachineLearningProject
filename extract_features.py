@@ -87,7 +87,7 @@ def get_feature_matrix():
     print("Number of data entries: ", len(convo_dataset))
     print("Total number of formal: ", total_formal)
     print("Total number of familiar: ", total_familiar)
-    print(convo_dataset)
+    # print(convo_dataset)
     return convo_dataset
 
 

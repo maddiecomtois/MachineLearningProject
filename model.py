@@ -12,16 +12,18 @@ from sklearn.metrics import confusion_matrix, mean_squared_error
 from extract_features import get_feature_matrix
 
 feature_matrix = get_feature_matrix()
-print(feature_matrix)
+# print(feature_matrix)
 X1 = np.array(feature_matrix[:, 0:1])
 X2 = np.array(feature_matrix[:, 1:2])
-X3 = np.array(feature_matrix[:, 2:3])
+X3 = np.array(feature_matrix[:, 2:len(feature_matrix[0])-1])
 X = np.column_stack((X1, X2, X3))
-y = feature_matrix[:, 3:4]
-y = list(map(int, y))
-print(X)
-print(len(X))
-print(len(y))
+# print(X[0])
+y = feature_matrix[:, len(feature_matrix[0])-1:].flatten()
+print(y)
+# y = list(map(int, y))
+# print(X)
+# print(len(X))
+# print(len(y))
 
 plt.rc('font', size=18)
 plt.rcParams['figure.constrained_layout.use'] = True
@@ -37,8 +39,8 @@ def graph_data():
     plt.show()
     plt.cla()
 
-graph_data()
-
+# graph_data()
+"""
 # plot the data on a 2D graph
 plt.title('Dataset - 2D Graph')
 plt.xlabel("Feature 1")
@@ -55,7 +57,7 @@ for i in range(len(y)):
 
 plt.show()
 plt.cla()
-
+"""
 # choose a penalty weight C for the Logistic Regression Model
 def choose_c():
     mean_error = []

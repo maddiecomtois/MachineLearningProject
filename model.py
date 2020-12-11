@@ -12,18 +12,13 @@ from sklearn.metrics import confusion_matrix, mean_squared_error
 from extract_features import get_feature_matrix
 
 feature_matrix = get_feature_matrix()
-# print(feature_matrix)
 X1 = np.array(feature_matrix[:, 0:1])
 X2 = np.array(feature_matrix[:, 1:2])
 X3 = np.array(feature_matrix[:, 2:len(feature_matrix[0])-1])
 X = np.column_stack((X1, X2, X3))
-# print(X[0])
 y = feature_matrix[:, len(feature_matrix[0])-1:].flatten()
-print(y)
-# y = list(map(int, y))
-# print(X)
-# print(len(X))
-# print(len(y))
+print(len(X))
+print(len(y))
 
 plt.rc('font', size=18)
 plt.rcParams['figure.constrained_layout.use'] = True
@@ -34,18 +29,18 @@ def graph_data():
     ax = fig.add_subplot(111, projection='3d')
     ax.scatter(X1, X2, y)
     plt.title("Data - 3D Graph")
-    plt.xlabel("Feature 1")
-    plt.ylabel("Feature 2")
+    plt.xlabel("Formal count")
+    plt.ylabel("Familiar count")
     plt.show()
     plt.cla()
 
-# graph_data()
-"""
+graph_data()
+
 # plot the data on a 2D graph
 plt.title('Dataset - 2D Graph')
-plt.xlabel("Feature 1")
-plt.ylabel("Feature 2")
-legend_elements = [Line2D([0], [0], marker='+', color='g', label='Class 1'), Line2D([0], [0], marker='_', color='b', label='Class -1')]
+plt.xlabel("Formal count")
+plt.ylabel("Familiar count")
+legend_elements = [Line2D([0], [0], marker='+', color='g', label='Formal'), Line2D([0], [0], marker='_', color='b', label='Familiar')]
 plt.legend(handles=legend_elements, loc='upper right')
 
 # label the data for the graph as either '+' for target values of +1 or 'o' for values of -1
@@ -57,7 +52,7 @@ for i in range(len(y)):
 
 plt.show()
 plt.cla()
-"""
+
 # choose a penalty weight C for the Logistic Regression Model
 def choose_c():
     mean_error = []
@@ -82,5 +77,30 @@ def choose_c():
     plt.show()
 
 choose_c()
+
+# Train a logistic regression classifier
+logistic_model = LogisticRegression(penalty='none', solver='lbfgs')
+logistic_model.fit(X, y)
+
+print("Logistic Regression Coefficients (2 features): ", logistic_model.coef_)
+print("Logistic Regression Intercept (2 features)", logistic_model.intercept_)
+print("Accuracy score: ", logistic_model.score(X, y))
+
+# Predict target values with sklearn logistic model
+ypred = logistic_model.predict(X)
+
+for i in range(len(ypred)):
+    if ypred[i] == 1:
+        plt.scatter(X1[i], X2[i], color="red", marker='+')
+    if ypred[i] == -1:
+        plt.scatter(X1[i], X2[i], color="blue", marker='_')
+
+# calculate the decision boundary using the equation of a line
+decision_boundary = -(X * logistic_model.coef_[0][0] + logistic_model.intercept_) / logistic_model.coef_[0][1]
+
+plt.plot(X, decision_boundary, color='black', linewidth=3)
+plt.show()
+plt.cla()
+
 
 

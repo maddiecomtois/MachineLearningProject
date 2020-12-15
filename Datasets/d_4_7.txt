@@ -1,0 +1,17 @@
+Dieter: Nico, was möchtest du? Hier ist die Tageskarte.
+Nico, what would you like? Here’s the menu.
+Elke: Nimm doch auch Tomaten mit Mozzarella und Basilikum.
+Have the tomatoes with mozzarella and basil.
+Nico: Nein. Nein, ich nehme die Suppe.
+No. No, I’ll have the soup.
+Dieter: Ja, dann einmal die Suppe, zweimal Tomaten mit Mozzarella und Basilikum und einmal Spaghetti Carbonara.
+Right. One soup, two tomatoes with mozzarella and basil and one Spaghetti Carbonara.
+Annette: Danke.
+Thanks.
+Nico: Danke.
+Thanks.
+Dieter: Guten Appetit!
+Bon Appetit!
+Nico: Guten Appetit!
+Bon Appetit!
+ordering at restaurant

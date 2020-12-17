@@ -5,10 +5,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
+from sklearn.dummy import DummyClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.model_selection import KFold, cross_val_score
-from sklearn.metrics import confusion_matrix, mean_squared_error
+from sklearn.metrics import confusion_matrix, mean_squared_error, roc_curve
 from extract_features import get_feature_matrix
 
 feature_matrix = get_feature_matrix()
@@ -28,7 +29,7 @@ def graph_data():
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
     ax.scatter(X1, X2, y)
-    plt.title("Data - 3D Graph")
+    plt.title("Logistic Regression - 3D Graph")
     plt.xlabel("Formal count")
     plt.ylabel("Familiar count")
     plt.show()
@@ -37,7 +38,7 @@ def graph_data():
 graph_data()
 
 # plot the data on a 2D graph
-plt.title('Dataset - 2D Graph')
+plt.title('Logistic Regression - 2D Graph')
 plt.xlabel("Formal count")
 plt.ylabel("Familiar count")
 legend_elements = [Line2D([0], [0], marker='+', color='g', label='Formal'), Line2D([0], [0], marker='_', color='b', label='Familiar')]
@@ -87,20 +88,57 @@ print("Logistic Regression Intercept (2 features)", logistic_model.intercept_)
 print("Accuracy score: ", logistic_model.score(X, y))
 
 # Predict target values with sklearn logistic model
-ypred = logistic_model.predict(X)
+logistic_preds = logistic_model.predict(X)
 
-for i in range(len(ypred)):
-    if ypred[i] == 1:
-        plt.scatter(X1[i], X2[i], color="red", marker='+')
-    if ypred[i] == -1:
-        plt.scatter(X1[i], X2[i], color="blue", marker='_')
+# create a baseline model and print its confusion matrix
+dummy = DummyClassifier(strategy="most_frequent").fit(X, y)
+print("Baseline Accuracy score: ", dummy.score(X, y))
+ydummy = dummy.predict(X)
 
-# calculate the decision boundary using the equation of a line
-decision_boundary = -(X * logistic_model.coef_[0][0] + logistic_model.intercept_) / logistic_model.coef_[0][1]
+# Calculate the confusion matrices for Logistic Regression and baseline model
+print("\nLogistic Regression Confusion Matrix", confusion_matrix(y, logistic_preds))
+print("Baseline Model Confusion Matrix", confusion_matrix(y, ydummy))
 
-plt.plot(X, decision_boundary, color='black', linewidth=3)
-plt.show()
-plt.cla()
+
+def graph_predictions():
+    plt.title('Logistic Regression Predictions')
+    plt.xlabel("Formal count")
+    plt.ylabel("Familiar count")
+    legend_elements = [Line2D([0], [0], marker='+', color='red', label='Formal'), Line2D([0], [0], marker='_', color='blue', label='Familiar')]
+    plt.legend(handles=legend_elements, loc='upper right')
+    for i in range(len(logistic_preds)):
+        if logistic_preds[i] == 1:
+            plt.scatter(X1[i], X2[i], color="red", marker='+')
+        if logistic_preds[i] == -1:
+            plt.scatter(X1[i], X2[i], color="blue", marker='_')
+
+    plt.show()
+    plt.cla()
+
+
+graph_predictions()
+
+# Plot the ROC curve for the models
+def plot_ROC():
+    # logistic regression
+    fpr, tpr, _ = roc_curve(y, logistic_model.decision_function(X))
+    plt.plot(fpr, tpr)
+
+    # baseline classifier
+    fpr, tpr, _ = roc_curve(y, ydummy)
+    plt.plot(fpr, tpr)
+
+    plt.title('Logistic Regression ROC')
+    plt.legend(["logistic", "baseline"])
+    plt.xlabel('False positive rate')
+    plt.ylabel('True positive rate')
+    plt.plot([0, 1], [0, 1], color='gray', linestyle='dashed', linewidth=3)
+    plt.show()
+
+
+plot_ROC()
+
+
 
 
 

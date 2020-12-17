@@ -29,7 +29,7 @@ def graph_data():
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
     ax.scatter(X1, X2, y)
-    plt.title("Logistic Regression - 3D Graph")
+    plt.title("3D Graph")
     plt.xlabel("Formal count")
     plt.ylabel("Familiar count")
     plt.show()
@@ -38,7 +38,7 @@ def graph_data():
 graph_data()
 
 # plot the data on a 2D graph
-plt.title('Logistic Regression - 2D Graph')
+plt.title('2D Graph')
 plt.xlabel("Formal count")
 plt.ylabel("Familiar count")
 legend_elements = [Line2D([0], [0], marker='+', color='g', label='Formal'), Line2D([0], [0], marker='_', color='b', label='Familiar')]
@@ -54,7 +54,7 @@ for i in range(len(y)):
 plt.show()
 plt.cla()
 
-# choose a penalty weight C for the Logistic Regression Model
+# choose a penalty weight C for the Logistic Regression Model using k-fold cross validation
 def choose_c():
     mean_error = []
     std_error = []
@@ -83,8 +83,8 @@ choose_c()
 logistic_model = LogisticRegression(penalty='none', solver='lbfgs')
 logistic_model.fit(X, y)
 
-print("Logistic Regression Coefficients (2 features): ", logistic_model.coef_)
-print("Logistic Regression Intercept (2 features)", logistic_model.intercept_)
+print("Logistic Regression Coefficients: ", logistic_model.coef_)
+print("Logistic Regression Intercept", logistic_model.intercept_)
 print("Accuracy score: ", logistic_model.score(X, y))
 
 # Predict target values with sklearn logistic model

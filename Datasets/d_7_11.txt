@@ -1,0 +1,9 @@
+Man: Na, vielleicht mal ein Bier? Du hast ja Feierabend.
+What about a beer? You’ve finished work.
+Nico: Ja, warum nicht?
+Yes, why not?
+Owner: Hallo.
+Hello.
+Nico: Hallo.
+Hello.
+with colleagues

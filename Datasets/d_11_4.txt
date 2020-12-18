@@ -1,0 +1,32 @@
+Bank Clerk 1: Ja, bitte schön?
+Yes?
+Nico: Ich möchte Geld abholen, für Frau Maier.
+1 would like to collect money for Frau Maier.
+Bank Clerk 1: Haben Sie ein Konto bei uns?
+Have you an account with us?
+Nico: Ich? Nein!
+Me? No!
+Bank Clerk 1: Sie möchten ein Konto eröffnen?
+Ah, you’d like to open an account?
+Nico: Konto eröffnen? Ich verstehe nicht. Ich möchte nur das englische Geld für Frau Maier abholen.
+Open an account? I don’t understand. 1 just want to pick up the English money for Frau Maier.
+Bank Clerk 1: Ach so, Sie möchten englisches Geld. Dann müssen Sie bitte zum Auslandsschalter. Das ist hier drüben, bitte.
+Ah, you want English money. Then you need to go to the foreign currency counter - over there.
+Bank Clerk 2: Guten Tag. Was kann ich für Sie tun?
+Hello. What can I do for you?
+Nico: Guten Tag. Ich muss englisches Geld für Frau Maier abholen. Ich habe ihren Ausweis, die Scheckkarte und die Vollmacht.
+Hello. I have to pick up English money for Frau Maier. I’ve got her identity card, the cheque card and the Authority.
+Bank Clerk 2: Ach ja, richtig. Wie viel war es denn?
+Ah yes. How much was it?
+Nico: Sie hat zweihundert Pfund bestellt.
+She ordered two hundred pounds.
+Bank Clerk 2: Normalerweise machen wir das nicht.
+Normally we don’t do this.
+Nico: Wie bitte?
+I beg your pardon?
+Bank Clerk 2: Frau Maier müsste das Geld abholen.
+Frau Maier should pick up the money.
+Nico: Frau Maier kann nicht. Wir haben heute Sendung.
+Frau Maier can’t pick it up. It’s our transmission day.
+Bank Clerk 2: Kann ich Ihren Ausweis sehen? Ja gut. Moment. So, wenn Sie bitte hier unterschreiben... Danke.
+customer service

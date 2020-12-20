@@ -9,7 +9,7 @@ from sklearn.dummy import DummyClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.model_selection import KFold, cross_val_score
-from sklearn.metrics import confusion_matrix, mean_squared_error, roc_curve
+from sklearn.metrics import confusion_matrix, mean_squared_error, roc_curve, classification_report
 from extract_features import get_feature_matrix
 
 feature_matrix = get_feature_matrix()
@@ -80,7 +80,7 @@ def choose_c():
 choose_c()
 
 # Train a logistic regression classifier
-logistic_model = LogisticRegression(penalty='none', solver='lbfgs')
+logistic_model = LogisticRegression(penalty='l2', solver='lbfgs', C=5)
 logistic_model.fit(X, y)
 
 print("Logistic Regression Coefficients: ", logistic_model.coef_)
@@ -137,6 +137,8 @@ def plot_ROC():
 
 
 plot_ROC()
+
+print(classification_report(y, logistic_preds))
 
 
 

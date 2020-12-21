@@ -48,6 +48,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, shuffle
 # initialise KFold
 kf = KFold(n_splits=5)
 
+
 # fuction for graphing normalized data on a 3D graph
 def graph_data():
     fig = plt.figure()
@@ -59,7 +60,8 @@ def graph_data():
     plt.show()
     plt.cla()
 
-# function for choosing gamma value for SVC model
+
+# function for choosing gamma value for Kernel_SVC model
 def choose_gamma():
     gammas = [1, 5, 10, 25]
     mse_vals = []
@@ -76,7 +78,7 @@ def choose_gamma():
 
     g = gammas[mse_vals.index(min(mse_vals))]
 
-    label = "Kernelized SVM Cross-Validation For Gamma"
+    label = "Kernelized SVC Cross-Validation For Gamma"
     plt.cla()
     plt.title(label)
     plt.xlabel("gamma")
@@ -105,7 +107,7 @@ def choose_c_svc():
     c = c_values[mse_vals.index(min(mse_vals))]
 
     plt.cla()
-    label = "Kernelized SVM Cross-Validation For C"
+    label = "Kernelized SVC Cross-Validation For C"
     plt.cla()
     plt.title(label)
     plt.xlabel("C")
@@ -153,6 +155,7 @@ def graph_logistic_predictions():
     ax.scatter(x_test[:, 0], x_test[:, 1], y_test, color='red', marker='+', label='test data')
     plt.legend()
     plt.show()
+
 
 # function for plotting the ROC curves for the logistic, SVC, and baseline models
 def plot_ROC():
@@ -205,8 +208,7 @@ g = choose_gamma()
 c = choose_c_svc()
 SVC = SVC(kernel='rbf', gamma=g, C=c)
 SVC.fit(x_train, y_train)
-svc_predictions = SVC.predict(x_test)
-svc_predictions = svc_predictions.reshape(-1, 1)
+svc_predictions = SVC.predict(x_test).reshape(-1, 1)
 
 # Plot Predictions & Test Data for Kernel_SVC
 fig = plt.figure()
@@ -229,7 +231,8 @@ print(classification_report(y_test, svc_predictions))
 # coef_ is only for linear kernels -- Gaussian is a curve
 
 # create a baseline model and print its confusion matrix
-dummy = DummyClassifier(strategy="most_frequent").fit(x_train, y_train)
+dummy = DummyClassifier(strategy="most_frequent")
+dummy.fit(x_train, y_train)
 ydummy = dummy.predict(x_test)
 print("\nBaseline Accuracy score: ", accuracy_score(y_test, ydummy))
 

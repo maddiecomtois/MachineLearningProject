@@ -7,25 +7,13 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.model_selection import KFold, train_test_split
 from sklearn.metrics import confusion_matrix, mean_squared_error, accuracy_score, roc_curve, \
-    precision_score, recall_score, auc
+    precision_score, recall_score, auc, classification_report
 from sklearn.dummy import DummyClassifier
 from extract_features import get_feature_matrix
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib as mpl
 # mpl.use('Qt5Agg')
-
-# fuction to graph the data on a 3D graph
-def graph_data():
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
-    ax.scatter(X1, X2, y)
-    plt.title("3D Graph")
-    plt.xlabel("Formal count")
-    plt.ylabel("Familiar count")
-    plt.show()
-    plt.cla()
-
 
 # Normalize Data???
 def normalize(X1, X2):
@@ -44,10 +32,32 @@ def normalize(X1, X2):
     for i in range(len(X2)):
         X2[i] = (X2[i] - min(X2)) / s
 
-    # print("Norm")
     normalized_data = np.column_stack((X1, X2, X3))
-    # print(normalized_data)
     return normalized_data
+
+# Get training and testing data
+feature_matrix = get_feature_matrix()
+X1 = np.array(feature_matrix[:, 0:1])
+X2 = np.array(feature_matrix[:, 1:2])
+X3 = np.array(feature_matrix[:, 2:len(feature_matrix[0])-1])
+x = np.column_stack((X1, X2, X3))
+y = feature_matrix[:, len(feature_matrix[0])-1:].flatten()
+
+# Train - Test Split
+x = normalize(X1, X2)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, shuffle=False, stratify=None)
+
+
+# fuction to graph the data on a 3D graph
+def graph_data():
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    ax.scatter(X1, X2, y)
+    plt.title("3D Graph")
+    plt.xlabel("Formal count")
+    plt.ylabel("Familiar count")
+    plt.show()
+    plt.cla()
 
 
 def choose_gamma():
@@ -99,6 +109,9 @@ def choose_c():
     plt.ylabel('Mean square error')
     plt.show()
 
+choose_c()
+
+
 def graph_predictions():
     plt.title('Logistic Regression Predictions')
     plt.xlabel("Formal count")
@@ -113,20 +126,6 @@ def graph_predictions():
 
     plt.show()
     plt.cla()
-
-
-
-# Get training and testing data
-feature_matrix = get_feature_matrix()
-X1 = np.array(feature_matrix[:, 0:1])
-X2 = np.array(feature_matrix[:, 1:2])
-X3 = np.array(feature_matrix[:, 2:len(feature_matrix[0])-1])
-x = np.column_stack((X1, X2, X3))
-y = feature_matrix[:, len(feature_matrix[0])-1:].flatten()
-
-# Train - Test Split
-# x = normalize(X1, X2)
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, shuffle=False, stratify=None)
 
 
 plt.rc('font', size=18)
@@ -188,20 +187,21 @@ print("Kernel_SVC Intercept:", SVC.intercept_)
 # coef_ is only for linear kernels -- Gaussian is a curve
 
 # Train a logistic regression classifier
-logistic_model = LogisticRegression(penalty='none', solver='lbfgs')
+logistic_model = LogisticRegression(penalty='l2', solver='lbfgs', C=5)
 logistic_model.fit(x_train, y_train)
-
-print("Logistic Regression Coefficients: ", logistic_model.coef_)
-print("Logistic Regression Intercept", logistic_model.intercept_)
-print("Accuracy score: ", logistic_model.score(x_train, y_train))
 
 # Predict target values with sklearn logistic model
 logistic_preds = logistic_model.predict(x_test)
 
+print("Logistic Regression Coefficients: ", logistic_model.coef_)
+print("Logistic Regression Intercept", logistic_model.intercept_)
+print("Accuracy score: ", accuracy_score(y_test, logistic_preds))
+
+
 # create a baseline model and print its confusion matrix
 dummy = DummyClassifier(strategy="most_frequent").fit(x_train, y_train)
-print("Baseline Accuracy score: ", dummy.score(x_train, y_train))
 ydummy = dummy.predict(x_test)
+print("Baseline Accuracy score: ", accuracy_score(y_test, ydummy))
 
 # Calculate the confusion matrices for Logistic Regression and baseline model
 print("\nLogistic Regression Confusion Matrix", confusion_matrix(y_test, logistic_preds))
@@ -235,6 +235,8 @@ def plot_ROC():
 
 
 plot_ROC()
+
+print(classification_report(y_test, logistic_preds))
 
 
 # Evaluation

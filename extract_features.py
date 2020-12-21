@@ -25,7 +25,6 @@ def get_feature_matrix():
     for filename in sorted(os.listdir(directory)):
         familiar_count = 0.0
         formal_count = 0.0
-        entry_label = 0
         dataset_entry = []
 
         with open(directory + '/' + filename, 'r') as f:
@@ -50,7 +49,6 @@ def get_feature_matrix():
                 # print("\tFormal frequency: ", formal_count, " / ", total_count, " = ", formal_count / total_count)
 
             # initialise label of the entry & append to feature list/vector
-            #entry_label = -1 if familiar_count > formal_count else 1
             if familiar_count > formal_count:
                 total_familiar += 1
                 entry_label = -1
@@ -71,25 +69,20 @@ def get_feature_matrix():
                 # print("\tType: ", type_tag)
 
             # use bag of words to create vectors for the conversation type feature
-            bag_vector = np.zeros(len(convo_type_tags))
-            i = 0
             for word in convo_type_tags:
                 if type_tag == word:
                     dataset_entry.append(1)
                 else:
                     dataset_entry.append(0)
-            # print("{0}\n{1}\n".format(type, np.array(bag_vector)))
 
-            # dataset_entry.append(np.array(bag_vector))
             dataset_entry.append(entry_label)
             convo_dataset.append(dataset_entry)
 
     convo_dataset = np.array(convo_dataset)
-    # print("\nFeature Matrix\n", convo_dataset)
     print("Number of data entries: ", len(convo_dataset))
     print("Total number of formal: ", total_formal)
     print("Total number of familiar: ", total_familiar)
-    # print(convo_dataset)
+    # print("\nFeature Matrix\n", convo_dataset)
     return convo_dataset
 
 

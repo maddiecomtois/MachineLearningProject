@@ -38,6 +38,33 @@ def normalize(X1, X2):
     return normalized_data
 
 
+def choose_gamma():
+    gammas = [1, 5, 10, 25]
+    mse_vals = []
+    std_vals = []
+    for g in gammas:
+        tmp_errors = []
+        for train, test in kf.split(x_train):
+            model = SVC(kernel='rbf', gamma=g)
+            model.fit(x_train[train], y_train[train])
+            ypred = model.predict(x_train[test])
+            tmp_errors.append(mean_squared_error(y_train[test], ypred))
+        mse_vals.append(np.mean(tmp_errors))
+        std_vals.append(np.std(tmp_errors))
+
+    g = gammas[mse_vals.index(min(mse_vals))]
+
+    label = "Kernelized SVM Cross-Validation For Gamma"
+    plt.cla()
+    plt.title(label)
+    plt.xlabel("gamma")
+    plt.ylabel("Mean Square Error")
+    plt.errorbar(gammas, mse_vals, std_vals, ecolor='red')
+    plt.show()
+    print(g, min(mse_vals))
+    return g
+
+
 # Get training and testing data
 feature_matrix = get_feature_matrix()
 X1 = np.array(feature_matrix[:, 0:1])
@@ -49,7 +76,7 @@ y = feature_matrix[:, len(feature_matrix[0])-1:].flatten()
 # print(x)
 
 # Train - Test Split
-# x = normalize(X1, X2)
+x = normalize(X1, X2)
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, shuffle=False, stratify=None)
 
 # Graph Data 2d -- Use Function in Log branch
@@ -75,34 +102,6 @@ plt.show()
 # Cross validation for hyperparameters gamma and C for kernalised svm
 # Other CV method --- Able to create graphs
 kf = KFold(n_splits=5)
-
-def choose_gamma():
-    gammas = [1, 5, 10, 25]
-    mse_vals = []
-    std_vals = []
-    for g in gammas:
-        tmp_errors = []
-        for train, test in kf.split(x_train):
-            model = SVC(kernel='rbf', gamma=g)
-            model.fit(x_train[train], y_train[train])
-            ypred = model.predict(x_train[test])
-            tmp_errors.append(mean_squared_error(y_train[test], ypred))
-        mse_vals.append(np.mean(tmp_errors))
-        std_vals.append(np.std(tmp_errors))
-
-    g = gammas[mse_vals.index(min(mse_vals))]
-
-    label = "CV For Gamma"
-    plt.cla()
-    plt.title(label)
-    plt.xlabel("gamma")
-    plt.ylabel("Mean Square Error")
-    plt.errorbar(gammas, mse_vals, std_vals, ecolor='red')
-    plt.show()
-    return g
-
-
-# CV for C -- Use choose_c function in Log
 g = choose_gamma()
 c_values = [0.1, 1, 10, 50, 100]
 mse_vals = []
@@ -118,9 +117,10 @@ for c in c_values:
     std_vals.append(np.std(tmp_errors))
 
 c = c_values[mse_vals.index(min(mse_vals))]
+print(c, min(mse_vals))
 
 plt.cla()
-label = "CV For C"
+label = "Kernelized SVM Cross-Validation For C"
 plt.cla()
 plt.title(label)
 plt.xlabel("C")
@@ -136,6 +136,7 @@ predictions = SVC.predict(x_test)
 predictions = predictions.reshape(-1, 1)
 
 print("Kernel_SVC Intercept:", SVC.intercept_)
+# coef_ is only for linear kernels -- Gaussian is a curve
 
 # Evaluation
 print("\nEVALUATION OF KERNEL_SVC\nMSE on test data:", mean_squared_error(y_test, predictions))
@@ -173,7 +174,20 @@ plt.title('Initial Data 3D')
 ax.set_xlabel('Formal')
 ax.set_ylabel('Familiar')
 ax.set_zlabel('Label')
-ax.scatter(x_test[:, 0], x_test[:, 1], y_test, color='red', marker='+', label='test data')
 ax.scatter(x_test[:, 0], x_test[:, 1], predictions, color='green', marker='D', label='predictions')
+ax.scatter(x_test[:, 0], x_test[:, 1], y_test, color='red', marker='+', label='test data')
+plt.legend()
+plt.show()
+
+# trying surface plot of testing and prediction points
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+plt.title('Test Points and their predictions')
+ax.set_xlabel('Formal')
+ax.set_ylabel('Familiar')
+ax.set_zlabel('Label')
+ax.scatter(x_test[:, 0], x_test[:, 1], y_test, color='red', marker='+', label='test data')
+ax.plot_surface(x_test[:, 0], x_test[:, 1], predictions, color='green', alpha=0.05)
+# ax.plot_trisurf(x_test[:, 0].flatten(), x_test[:, 1].flatten(), predictions.flatten(), color='green')
 plt.legend()
 plt.show()

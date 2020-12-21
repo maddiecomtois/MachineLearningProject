@@ -1,0 +1,59 @@
+Assistant: Kann ich Ihnen behilflich sein?
+Can I help?
+Nico: Ah…
+Ah…
+Anna: Wir suchen ein Geschenk.
+We’re looking for a present.
+Nico: Ja, ich möchte ein Geschenk für meine Mutter.
+Yes, I want a present for my mother.
+Assistant: Was darf es denn sein? Ein Armband, eine Brosche?
+What sort of thing? A bracelet, a brooch?
+Nico: Eine Brosche.
+A brooch.
+Assistant: Gefällt Ihnen hiervon etwas? Diese vielleicht?
+Do you like anything from here? This perhaps?
+Nico: Nein, die gefällt mir nicht.
+No, I don’t like it.
+Assistant: Oder diese?
+Or these?
+Anna: Nico, schau dir diese Broschen an.
+Nico, look at these brooches.
+Nico: Die sind hübsch! Wie viel kostet diese?
+They’re pretty. How much is this one?
+Assistant: Hundertzehn Mark.
+110 marks.
+Nico: Nein, das ist mir zu teuer.
+No, that’s too dear.
+Assistant: Sie ist aber sehr schön gearbeitet.
+But it’s beautifully made.
+Anna: Haben Sie billigere?
+Have you anything cheaper?
+Assistant: Ja, hier zum Beispiel, diese kostet fünfundsechzig Mark.
+Well, this for example, this costs 65 marks.
+Nico: Ja, die gefällt mir sehr gut. Danke. Die nehme ich.
+I like it a lot, thanks. I’ll take it.
+Assistant: Soll ich sie als Geschenk einpacken?
+Shall I wrap it for you as a present?
+Anna: Wenn du willst, packt dir die Dame die Brosche ein... in ein schönes Papier... mit einer Schleife - so.
+If you like, the lady will wrap it for you in nice paper - with a bow - like those.
+Nico: Bitte.
+Yes, please.
+Anna: Bitte packen Sie die Brosche als Geschenk ein.
+Would you wrap it as a present, please.
+Assistant: Gerne.
+With pleasure.
+Anna: Nico, es tut mir leid, ich muss gehen. Wir sehen uns dann morgen, OK?
+I’m sorry, Nico, I’ve got to go. See you tomorrow, OK?
+Nico: OK. Vielen Dank für die Hilfe, Anna.
+OK. Many thanks for your help, Anna.
+Anna: Gern geschehen. Bis morgen dann.
+A pleasure. Till tomorrow, then.
+Nico: Bis morgen.
+Till tomorrow.
+Assistant: Ihr Geschenk. Dann bekomme ich fünfundsechzig Mark.
+Your present. 65 marks, please.
+Nico: Bitte schön.
+Here you are.
+Assistant: Danke schön.
+Thanks.
+with friends

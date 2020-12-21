@@ -1,0 +1,31 @@
+Schiller: Danke, Frau Schneider. Kommen Sie gut nach Hause.
+Thanks, Frau Schneider. Safe journey home.
+Elke: Hallo, Dieter.
+Dieter: Hallo!
+UIIi: Hallo, Elke. Na, wie geht’s denn?
+Hello, Elke. How are you?
+Elke: Gut, Ulli. Und dir?
+I am fine, Ulli. And you?
+UIIi: Auch. Hör mal Elke, hast du noch Lust auf einen Drink?
+I am fine too. Listen, Elke, do you fancy a drink?
+EIke: Jetzt? Gleich?
+Right now?
+UIIi: Ja.
+Elke: Du, es tut mir leid, ich habe einen Zahnarzttermin.
+Look, I’m sorry but I’ve got a dentist’s appointment.
+UIIi: Ach, du Arme. Dann Freitag, vielleicht?
+Poor thing. Perhaps Friday?
+Elke: Übermorgen ist Freitag... Ja, ja, warum nicht?
+Friday is the day after tomorrow... Yes, why not.
+UIIi: Prima. Bis dann! Tschüs!
+Great. Till then! Bye!
+Elke: Tschüs.
+Bye.
+UIli: Hallo, Nico.
+Nico: Ich mache jetzt Schluss. Tschüs, bis morgen.
+I’m finishing now. Bye, see you tomorrow.
+Schiller: Schönen Feierabend, Herr Antonescu.
+Have a nice evening, Herr Antonescu.
+Nico: Danke, Herr Schiller. Tschüs.
+Thanks, Herr Schiller. Bye.
+with colleagues

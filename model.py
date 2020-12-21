@@ -2,7 +2,6 @@
 @authors Madeleine Comtois and Ciara Gilsenan
 @version 2/12/2020
 """
-from matplotlib.lines import Line2D
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.model_selection import KFold, train_test_split
@@ -11,7 +10,6 @@ from sklearn.dummy import DummyClassifier
 from extract_features import get_feature_matrix
 import matplotlib.pyplot as plt
 import numpy as np
-import matplotlib as mpl
 # mpl.use('Qt5Agg')
 
 # Function to normalize formal and familiar frequencies in the feature matrix
@@ -50,7 +48,18 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, shuffle
 # initialise KFold
 kf = KFold(n_splits=5)
 
+# fuction for graphing normalized data on a 3D graph
+def graph_data():
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    ax.scatter(X1, X2, y, c='red')
+    plt.title("Normalized Data")
+    plt.xlabel("Formal count")
+    plt.ylabel("Familiar count")
+    plt.show()
+    plt.cla()
 
+# function for choosing gamma value for SVC model
 def choose_gamma():
     gammas = [1, 5, 10, 25]
     mse_vals = []
@@ -77,6 +86,7 @@ def choose_gamma():
     return g
 
 
+# function for choosing C for SVC model
 def choose_c_svc():
     g = choose_gamma()
     c_values = [0.1, 1, 10, 50, 100]
@@ -105,7 +115,7 @@ def choose_c_svc():
     return c
 
 
-# choose a penalty weight C for the Logistic Regression Model using k-fold cross validation
+# function for choosing penalty weight C for Logistic Regression Model
 def choose_c_log():
     mean_error = []
     std_error = []
@@ -120,11 +130,10 @@ def choose_c_log():
         mean_error.append(np.array(temp).mean())
         std_error.append(np.array(temp).std())
 
-    # print("C mean square error: ", mean_error)
+    print("Logistic C mean square error: ", mean_error)
     c = Ci_range[mean_error.index(min(mean_error))]
-    # print(c)
     plt.cla()
-    plt.title('C vs Mean Square Error')
+    plt.title('Logistic Cross-Validation For C')
     plt.errorbar(Ci_range, mean_error, yerr=std_error, linewidth=3, ecolor='red')
     plt.xlabel('C')
     plt.ylabel('Mean square error')
@@ -132,63 +141,63 @@ def choose_c_log():
     return c
 
 
-# fuction to graph the data on a 3D graph
-def graph_data():
+# function for graphing logistic regression predictions
+def graph_logistic_predictions():
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
-    ax.scatter(X1, X2, y, c='red')
-    plt.title("Normalized Data")
-    plt.xlabel("Formal count")
-    plt.ylabel("Familiar count")
+    plt.title('Predictions & Test Data - Logistic Regression')
+    ax.set_xlabel('Formal')
+    ax.set_ylabel('Familiar')
+    ax.set_zlabel('Label')
+    ax.scatter(x_test[:, 0], x_test[:, 1], logistic_predictions, color='green', marker='D', label='predictions')
+    ax.scatter(x_test[:, 0], x_test[:, 1], y_test, color='red', marker='+', label='test data')
+    plt.legend()
     plt.show()
-    plt.cla()
 
-def graph_predictions():
-    plt.title('Logistic Regression Predictions')
-    plt.xlabel("Formal count")
-    plt.ylabel("Familiar count")
-    legend_elements = [Line2D([0], [0], marker='+', color='red', label='Formal'), Line2D([0], [0], marker='_', color='blue', label='Familiar')]
-    plt.legend(handles=legend_elements, loc='upper right')
-    for i in range(len(logistic_preds)):
-        if logistic_preds[i] == 1:
-            plt.scatter(X1[i], X2[i], color="red", marker='+')
-        if logistic_preds[i] == -1:
-            plt.scatter(X1[i], X2[i], color="blue", marker='_')
+# function for plotting the ROC curves for the logistic, SVC, and baseline models
+def plot_ROC():
+    # logistic regression
+    fpr, tpr, _ = roc_curve(y_test, logistic_model.decision_function(x_test))
+    plt.plot(fpr, tpr, label="Logistic")
+    print("\nAUC Logistic:", auc(fpr, tpr))
 
+    # Kernel_SVC
+    fpr, tpr, _ = roc_curve(y_test, SVC.decision_function(x_test))
+    plt.plot(fpr, tpr, label="SVC")
+    print("AUC Kernel_SVC:", auc(fpr, tpr))
+
+    # baseline classifier
+    fpr, tpr, _ = roc_curve(y_test, ydummy)
+    plt.plot(fpr, tpr, label="Dummy Classifier")
+
+    plt.title('ROC - SVC, Logistic, and Baseline')
+    plt.legend()
+    plt.xlabel('False positive rate')
+    plt.ylabel('True positive rate')
+    plt.plot([0, 1], [0, 1], color='gray', linestyle='dashed', linewidth=3)
     plt.show()
-    plt.cla()
 
 
 graph_data()
 
-# plot the data on a 2D graph
-plt.title('2D Graph')
-plt.xlabel("Formal count")
-plt.ylabel("Familiar count")
-legend_elements = [Line2D([0], [0], marker='+', color='g', label='Formal'), Line2D([0], [0], marker='_', color='b', label='Familiar')]
-plt.legend(handles=legend_elements, loc='upper right')
-
-# label the data for the graph as either '+' for target values of +1 or 'o' for values of -1
-for i in range(len(y)):
-    if y[i] == 1:
-        plt.scatter(X1[i], X2[i], color="green", marker='+')
-    if y[i] == -1:
-        plt.scatter(X1[i], X2[i], color="blue", marker='_')
-
-
 # TRAIN MODELS
 # Train a logistic regression classifier
-logistic_model = LogisticRegression(penalty='l2', solver='lbfgs', C=5)
-logistic_model.fit(x_train, y_train)
 c_log = choose_c_log()
-# Predict target values with sklearn logistic model
-logistic_preds = logistic_model.predict(x_test)
+logistic_model = LogisticRegression(penalty='l2', solver='lbfgs', C=c_log)
+logistic_model.fit(x_train, y_train)
 
+# Predict target values for logistic regression
+logistic_predictions = logistic_model.predict(x_test)
+
+# Evaluation
 print("\nLOGISTIC REGRESSION:\nLogistic Regression Coefficients: ", logistic_model.coef_)
 print("Logistic Regression Intercept", logistic_model.intercept_)
-print("Accuracy score: ", accuracy_score(y_test, logistic_preds))
-print("Logistic Regression Confusion Matrix\n", confusion_matrix(y_test, logistic_preds))
-print(classification_report(y_test, logistic_preds))
+print("Accuracy score: ", accuracy_score(y_test, logistic_predictions))
+print("Logistic Regression Confusion Matrix\n", confusion_matrix(y_test, logistic_predictions))
+print(classification_report(y_test, logistic_predictions))
+
+# Plot Predictions & Test Data for Logistic Regression
+graph_logistic_predictions()
 
 
 # Train Kernelised SVC with chosen gamma and C
@@ -219,7 +228,6 @@ print("Confusion Matrix:\n", confusion_matrix(y_test, svc_predictions))
 print(classification_report(y_test, svc_predictions))
 # coef_ is only for linear kernels -- Gaussian is a curve
 
-
 # create a baseline model and print its confusion matrix
 dummy = DummyClassifier(strategy="most_frequent").fit(x_train, y_train)
 ydummy = dummy.predict(x_test)
@@ -228,31 +236,5 @@ print("\nBaseline Accuracy score: ", accuracy_score(y_test, ydummy))
 # Calculate the confusion matrices for Logistic Regression and baseline model
 print("Baseline Model Confusion Matrix", confusion_matrix(y_test, ydummy))
 
-
-graph_predictions()
-
-# Plot the ROC curve for the models
-def plot_ROC():
-    # logistic regression
-    fpr, tpr, _ = roc_curve(y_test, logistic_model.decision_function(x_test))
-    plt.plot(fpr, tpr, label="Logistic")
-    print("\nAUC Logistic:", auc(fpr, tpr))
-
-    # Kernel_SVC
-    fpr, tpr, _ = roc_curve(y_test, SVC.decision_function(x_test))
-    plt.plot(fpr, tpr, label="SVC")
-    print("AUC Kernel_SVC:", auc(fpr, tpr))
-
-    # baseline classifier
-    fpr, tpr, _ = roc_curve(y_test, ydummy)
-    plt.plot(fpr, tpr, label="Dummy Classifier")
-
-    plt.title('Model ROC')
-    plt.legend()
-    plt.xlabel('False positive rate')
-    plt.ylabel('True positive rate')
-    plt.plot([0, 1], [0, 1], color='gray', linestyle='dashed', linewidth=3)
-    plt.show()
-
-
+# show the ROC graph
 plot_ROC()

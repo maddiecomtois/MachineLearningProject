@@ -40,13 +40,12 @@ def get_feature_matrix():
 
             # get frequency of formal/familiar out of total number of total counts
             total_count = formal_count + familiar_count
-            # print(filename)
-            # print('\tNumber of familiar: ', familiar_count)
-            # print('\tNumber of formal: ', formal_count)
+            print(filename)
+            print('\tNumber of familiar: ', familiar_count)
+            print('\tNumber of formal: ', formal_count)
             if total_count > 0:
-                pass
-                # print("\tFamiliar frequency: ", familiar_count, " / ", total_count, " = ", familiar_count / total_count)
-                # print("\tFormal frequency: ", formal_count, " / ", total_count, " = ", formal_count / total_count)
+                print("\tFamiliar frequency: ", familiar_count, " / ", total_count, " = ", familiar_count / total_count)
+                print("\tFormal frequency: ", formal_count, " / ", total_count, " = ", formal_count / total_count)
 
             # initialise label of the entry & append to feature list/vector
             if familiar_count > formal_count:
@@ -65,8 +64,7 @@ def get_feature_matrix():
             if type_tag not in convo_type_tags:
                 type_tag = "dummy_cat"
             else:
-                pass
-                # print("\tType: ", type_tag)
+                print("\tType: ", type_tag)
 
             # use bag of words to create vectors for the conversation type feature
             for word in convo_type_tags:
@@ -82,8 +80,8 @@ def get_feature_matrix():
     print("Number of data entries: ", len(convo_dataset))
     print("Total number of formal: ", total_formal)
     print("Total number of familiar: ", total_familiar)
-    # print("\nFeature Matrix\n", convo_dataset)
+    print("\nFeature Matrix\n", convo_dataset)
     return convo_dataset
 
 
-# get_feature_matrix()
+get_feature_matrix()

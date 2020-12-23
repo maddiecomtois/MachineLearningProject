@@ -236,7 +236,7 @@ dummy = DummyClassifier(strategy="most_frequent")
 dummy.fit(x_train, y_train)
 ydummy = dummy.predict(x_test)
 print("\nBaseline Accuracy score: ", accuracy_score(y_test, ydummy))
-
+print("Baseline MSE:", mean_squared_error(y_test, ydummy))
 # Calculate the confusion matrices for Logistic Regression and baseline model
 print("Baseline Model Confusion Matrix", confusion_matrix(y_test, ydummy))
 

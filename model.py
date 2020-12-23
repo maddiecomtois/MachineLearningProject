@@ -194,6 +194,7 @@ logistic_predictions = logistic_model.predict(x_test)
 
 # Evaluation
 print("\nLOGISTIC REGRESSION:\nLogistic Regression Coefficients: ", logistic_model.coef_)
+print("Mean Squared Error", mean_squared_error(y_test, logistic_predictions))
 print("Logistic Regression Intercept", logistic_model.intercept_)
 print("Accuracy score: ", accuracy_score(y_test, logistic_predictions))
 print("Logistic Regression Confusion Matrix\n", confusion_matrix(y_test, logistic_predictions))
